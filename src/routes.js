@@ -1,18 +1,19 @@
-import React from 'react'
-import { Route, IndexRoute } from 'react-router'
-import Layout from './components/Layout';
+import React from 'react';
+import { Router, Route, browserHistory, IndexRoute  } from 'react-router';
+import App from './components/app';
 import IndexPage from './components/IndexPage';
-import TodoPage from './components/TodoPage';
-import about from './AboutPage';
+import Layout from './components/Layout';
 import NotFoundPage from './components/NotFoundPage';
+import About_us from './components/About_us';
 
 const routes = (
-  <Route path="/" component={Layout}>
-    <IndexRoute component={IndexPage}/>
-    <Route path="todo" component={TodoPage}/>
-     <Route path="about" component={AboutPage}/>
-    <Route path="*" component={NotFoundPage}/>
-  </Route>
+ <Router history = {browserHistory}>
+        <Route path="/" component={Layout} >
+                 <IndexRoute component = {IndexPage} />
+                 <Route path="todo" component={App}/>
+                 <Route path="about" component={About_us}/>
+                 <Route path="*" component={NotFoundPage}/>
+        </Route>
+  </Router>
 );
-
 export default routes;
