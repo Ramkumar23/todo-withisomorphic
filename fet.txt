@@ -1,0 +1,10 @@
+require('isomorphic-fetch');
+
+fetch('http://xkcd-imgs.herokuapp.com/')
+    .then(function(response) {
+        return response.json();
+    }).then(function(res) {
+        console.log(res)
+    }).catch(function(ex) {
+        console.log('failed', ex)
+    });
